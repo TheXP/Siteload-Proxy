@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+    h1 {
+      font-size: 72px;
+      margin-bottom: 5px;
+    }
+    .small {
+      font-size: 36px;
+      margin-top: 5px;
+    }
+    button {
+      margin: 10px 0;
+    }
+  </style>
+  <script>
+    function openAboutBlankWithContent() {
+      var newTab = window.open('about:blank');
+      newTab.document.write(document.documentElement.innerHTML);
+    }
+  </script>
+</head>
+<body>
+  <h1>Siteload</h1>
+  <h2 class="small">Proxy</h2>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <button onclick="window.open('https://sites.google.com/view/siteload-main/home')">Visit Siteload</button>
+    <button onclick="window.open('about:blank').document.write('<script>(function(){var link=prompt(\'Enter the URL\');if(link){var proxy=\'https://api.codetabs.com/v1/proxy?quest=\';fetch(proxy+link).then((response)=>response.text()).then((text)=>document.write(text));}})();<\/script>');">Open Proxy</button>
+    <button onclick="openAboutBlankWithContent()">about:blank</button>
+  </div>
+</body>
+</html>
